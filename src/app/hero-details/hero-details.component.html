@@ -1,11 +1,18 @@
-<button (click)="goBack()">go back</button>
-
-<div *ngIf="hero">
-    <h2>{{hero.name | uppercase}} Details</h2>
-    <div><span>id: </span>{{hero.id}}</div>
-    <div>
-        <label for="hero-name">Hero name: </label>
-        <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+<div class="row mt-2">
+    <div class="col">
     </div>
-    <button (click)="save()">save</button>
+</div>
+<div class="row">
+    <div class="col">
+        <button class="btn btn-primary d-inline" (click)="goBack()">Back</button>
+        <hr>
+        <div *ngIf="hero">
+            <h2 class="d-inline">{{hero.name | uppercase}}'s Details (#{{hero.id}})</h2>
+            <div class="mb-2">
+                <label for="exampleInputEmail1" class="form-label">Hero name</label>
+                <input class="form-control" id="exampleInputEmail1" [(ngModel)]="hero.name" placeholder="Name">
+            </div>
+            <button class="btn btn-primary" (click)="save()">Save</button>
+        </div>
+    </div>
 </div>
